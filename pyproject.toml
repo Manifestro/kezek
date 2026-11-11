@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kezek"
+version = "1.0.0"
+description = "Two-person conversation separation from one mono recording: one time-aligned track per person"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = ["torch>=2.4", "torchaudio>=2.4", "numpy", "soundfile", "huggingface_hub"]
+
+[project.scripts]
+kezek-separate = "kezek.cli:main"
+
+[tool.setuptools]
+packages = ["kezek"]
