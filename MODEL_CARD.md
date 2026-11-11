@@ -90,13 +90,19 @@ The comparison is against pyannote `speaker-diarization-community-1` → Dialogu
 
 | Data | Licence / terms |
 |---|---|
-| Open Yap 1K (The Agentic Data Company) | under its data use agreement, which allows commercial use and sharing of trained weights |
+| Open Yap 1K (The Agentic Data Company), build `open-yap-1k_2026-11-04_wav_0e7bcf1e_0d3abb77` | [Open Yap 1K Data Use Agreement v1](https://theagenticdatacompany.com/open-yap-1k/license): commercial use and open weights allowed; no Open Yap audio or derived audio is published here |
 | Libri-Light (LibriVox audio, public domain) | — |
 | VoxPopuli | CC0; contains European Parliament recordings — source: European Parliament |
 | Augmentation: RIRS_NOISES | Apache-2.0 |
 | Augmentation: MUSAN | per OpenSLR 17 |
 
 CallHome and the DuplexChat audio were not used for training.
+
+Do not use Kezek to identify speakers or to clone a specific person's voice.
+
+## Citation
+
+If you use Kezek, cite this model and Open Yap 1K (The Agentic Data Company, Open Yap 1K, build open-yap-1k_2026-11-04_wav_0e7bcf1e_0d3abb77, https://theagenticdatacompany.com/open-yap-1k).
 
 ## Licence
 
