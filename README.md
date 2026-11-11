@@ -9,7 +9,7 @@ Kezek splits a two-person conversation recorded on one channel into two tracks, 
 ## Install
 
 ```bash
-pip install git+https://github.com/<org>/kezek
+pip install git+https://github.com/Manifestro/kezek
 ```
 
 Requirements:

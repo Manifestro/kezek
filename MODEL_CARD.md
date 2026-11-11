@@ -26,7 +26,7 @@ Short replies ("yeah", "mm-hm") said while the other person talks stay on the ri
 ## Usage
 
 ```bash
-pip install git+https://github.com/<org>/kezek
+pip install git+https://github.com/Manifestro/kezek
 kezek-separate conversation.wav --out separated/
 ```
 
@@ -100,4 +100,4 @@ CallHome and the DuplexChat audio were not used for training.
 
 ## Licence
 
-Weights: Apache-2.0. Code (github.com/<org>/kezek): MIT.
+Weights: Apache-2.0. Code (github.com/Manifestro/kezek): MIT.
