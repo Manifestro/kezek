@@ -46,7 +46,7 @@ The metrics, the ablations and an ideal-mask ceiling are in the paper.
 ## Install
 
 ```bash
-pip install git+https://github.com/Manifestro/kezek
+pip install kezek
 ```
 
 You need Python ≥ 3.10, PyTorch ≥ 2.4 with CUDA, and a GPU with bf16 support.

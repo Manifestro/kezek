@@ -28,7 +28,7 @@ Kezek is built for preparing full-duplex dialogue data from conversational audio
 ## Usage
 
 ```bash
-pip install git+https://github.com/Manifestro/kezek
+pip install kezek
 kezek-separate conversation.wav --out separated/
 ```
 

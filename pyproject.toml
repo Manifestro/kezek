@@ -9,7 +9,20 @@ description = "Two-person conversation separation from one mono recording: one t
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
+authors = [{name = "Bagzhan Karl", email = "bagzhankarl@manifestro.io"}, {name = "Alizhan Karl", email = "alizhankarl@manifestro.io"}]
+keywords = ["speech separation", "speaker separation", "diarization", "full-duplex", "dialogue"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = ["torch>=2.4", "torchaudio>=2.4", "numpy", "soundfile", "huggingface_hub"]
+
+[project.urls]
+Homepage = "https://github.com/Manifestro/kezek"
+Weights = "https://huggingface.co/manifestro/kezek-v1"
+Demo = "https://manifestro.io/models/kezek"
 
 [project.scripts]
 kezek-separate = "kezek.cli:main"
