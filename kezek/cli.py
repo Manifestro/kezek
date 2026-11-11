@@ -26,9 +26,13 @@ def main():
     ap.add_argument("inputs", nargs="+")
     ap.add_argument("--out", required=True)
     ap.add_argument("--repo", default=None, help="Hugging Face model repository (default: manifestro/kezek-v1)")
-    ap.add_argument("--device", default="cuda")
+    ap.add_argument("--device", default=None, help="cuda or cpu (default: cuda if available)")
     a = ap.parse_args()
+    import torch
+
     from kezek import Kezek
+
+    a.device = a.device or ("cuda" if torch.cuda.is_available() else "cpu")
 
     kz = Kezek.from_pretrained(**({"repo": a.repo} if a.repo else {}), dev=a.device)
     os.makedirs(a.out, exist_ok=True)

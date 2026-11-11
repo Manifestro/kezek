@@ -203,7 +203,7 @@ class PairNet(nn.Module):
         speaker fingerprint (SpeakerNet); the two voices of the recording are then found by it
         (fingerprint_voices) instead of by PairNet's own frame vectors."""
         x = wav[None]
-        with torch.autocast("cuda", dtype=torch.bfloat16):
+        with torch.autocast("cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
             h, z, sp, ov = self.frames(x)
         w = torch.sigmoid(sp) * (1 - torch.sigmoid(ov))
         fpc = None
@@ -218,14 +218,14 @@ class PairNet(nn.Module):
                 s = two_voices(z, w)
         else:
             s = two_voices(z, w)
-        with torch.autocast("cuda", dtype=torch.bfloat16):
+        with torch.autocast("cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
             p = torch.sigmoid(self.decode(h, z, s, sp, ov, fpc))
         for _ in range(refine):
             solo = torch.stack([(p[:, 0] > thr) & (p[:, 1] < 1 - thr), (p[:, 1] > thr) & (p[:, 0] < 1 - thr)], 1).float()
             if (solo.sum(-1) < 25).any():
                 break
             s = F.normalize(torch.einsum("bkf,bfz->bkz", solo * w[:, None], z), dim=-1)
-            with torch.autocast("cuda", dtype=torch.bfloat16):
+            with torch.autocast("cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
                 p = torch.sigmoid(self.decode(h, z, s, sp, ov, None))
         return p[0].float(), s[0]
 
@@ -241,7 +241,7 @@ def fingerprint_track(spk, wav, win_s=1.5, hop_s=0.25, bs=512):
     segs = wav.unfold(0, W, H)[: len(st)]
     e = []
     for i in range(0, len(segs), bs):
-        with torch.autocast("cuda", dtype=torch.bfloat16):
+        with torch.autocast("cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
             e.append(F.normalize(spk(segs[i : i + bs].float()).float(), dim=-1))
     return torch.cat(e), st // HOP, W // HOP
 

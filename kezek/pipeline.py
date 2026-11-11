@@ -108,9 +108,10 @@ class Kezek:
         self.dev, self.thr, self.refine = dev, threshold, refine
 
     @classmethod
-    def from_pretrained(cls, repo=REPO, revision=None, dev="cuda", **kw):
+    def from_pretrained(cls, repo=REPO, revision=None, dev=None, **kw):
         from huggingface_hub import hf_hub_download
 
+        dev = dev or ("cuda" if torch.cuda.is_available() else "cpu")
         paths = {k: hf_hub_download(repo, f, revision=revision) for k, f in FILES.items()}
         return cls(paths["stage1"], paths["fingerprint"], paths["separator"], dev=dev, **kw)
 

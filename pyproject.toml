@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kezek"
-version = "1.0.0"
+version = "1.0.1"
 description = "Two-person conversation separation from one mono recording: one time-aligned track per person"
 readme = "README.md"
 license = {text = "MIT"}
