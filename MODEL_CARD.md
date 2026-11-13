@@ -23,7 +23,7 @@ Overlaps and short replies ("yeah", "mm-hm") stay on the track of the person who
 
 Kezek is built for preparing full-duplex dialogue data from conversational audio that exists only as a mono mix.
 
-[Code (MIT)](https://github.com/Manifestro/kezek) · [Demo](https://manifestro.io/models/kezek) · Paper (arXiv, link at release)
+[Code (MIT)](https://github.com/Manifestro/kezek) · [Demo](https://manifestro.io/models/kezek) · [Paper (arXiv:2611.16933)](https://arxiv.org/abs/2611.16933)
 
 ## Usage
 
@@ -111,7 +111,10 @@ Weights: Apache-2.0. Code: MIT ([github.com/Manifestro/kezek](https://github.com
   title  = {Kezek: Splitting Mono Two-Person Conversations into Per-Speaker Tracks for Full-Duplex Dialogue Data},
   author = {Karl, Bagzhan and Karl, Alizhan},
   year   = {2026},
-  note   = {arXiv identifier to be added at release}
+  eprint = {2611.16933},
+  archivePrefix = {arXiv},
+  primaryClass = {eess.AS},
+  url    = {https://arxiv.org/abs/2611.16933}
 }
 ```
 

@@ -23,6 +23,7 @@ dependencies = ["torch>=2.4", "torchaudio>=2.4", "numpy", "soundfile", "huggingf
 Homepage = "https://github.com/Manifestro/kezek"
 Weights = "https://huggingface.co/manifestro/kezek-v1"
 Demo = "https://manifestro.io/models/kezek"
+Paper = "https://arxiv.org/abs/2611.16933"
 
 [project.scripts]
 kezek-separate = "kezek.cli:main"

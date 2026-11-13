@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://huggingface.co/manifestro/kezek-v1">Weights</a> ·
   <a href="https://manifestro.io/models/kezek">Demo</a> ·
-  Paper (arXiv, link at release)
+  <a href="https://arxiv.org/abs/2611.16933">Paper</a>
 </p>
 
 Kezek turns a mono recording of exactly two people into **one track per person**. Each track keeps the original length and timing.
@@ -98,7 +98,10 @@ The model was trained on Open Yap 1K under its [Data Use Agreement](https://thea
   title  = {Kezek: Splitting Mono Two-Person Conversations into Per-Speaker Tracks for Full-Duplex Dialogue Data},
   author = {Karl, Bagzhan and Karl, Alizhan},
   year   = {2026},
-  note   = {arXiv identifier to be added at release}
+  eprint = {2611.16933},
+  archivePrefix = {arXiv},
+  primaryClass = {eess.AS},
+  url    = {https://arxiv.org/abs/2611.16933}
 }
 ```
 
